@@ -122,8 +122,3 @@ TifCrop(r"E:\TIF\masaike\clip222.tif",
 #标签
 TifCrop(r"F:\test\test1\Feature_shp41.tif",
         r"C:\Users\KT15\Desktop\555", 100, 0.1)
-#标签裁剪不正确？？？？标签255问题？？？？
-#可能是无背景的原因
-
-#已解决
-#见笔记
