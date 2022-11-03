@@ -6,7 +6,7 @@
 # @Time : 2022/10/31 16:27
 
 import os
-import gdal
+from osgeo import gdal
 import numpy as np
 
 
