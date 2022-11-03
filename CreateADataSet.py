@@ -118,9 +118,44 @@ def TifCrop(TifPath, SavePath, CropSize, RepetitionRate):
 # 训练集和验证集都要裁剪
 # 裁剪出 图像   特征。拿到  影像数据增强中进行数据增强
 #  将影像1裁剪为重复率为0.1的256×256的数据集
-# 图像
-TifCrop(r"E:\TIF\masaike\clip222.tif",
-		r"C:\Users\KT15\Desktop\222", 100, 0.1)
-# 标签
-TifCrop(r"F:\test\test1\Feature_shp41.tif",
-		r"C:\Users\KT15\Desktop\555", 100, 0.1)
+
+def CreateADataSet():
+	print("★★★★★★★★★★★★★★★★★★★★★★★----制作语义分割遥感数据集(GDAL)----★★★★★★★★★★★★★★★★★★★★★★★")
+	print("")
+
+	# 图像 输入输出
+	print("影像裁剪:")
+	TifImage = input("1.请输入裁剪的TIF数据集文件名(如 E:\TIF\masaike\Area.tif):")
+	ImageOutFile = input("2.请输入裁剪后的输出文件夹(如 E:\TIF\masaike\image):")
+	ClipImageSize = input("3.请输入裁剪尺寸(如 256):")
+
+	print("")
+
+	# 标签 输入输出
+	print("标签裁剪:")
+	TifLabel = input("1.请输入裁剪的标签文件名(如 E:\TIF\masaike\lable.tif):")
+	LabelOutFile = input("2.请输入裁剪后的输出文件夹(如 E:\TIF\masaike\lable):")
+	ClipLableSize = input("3.请输入裁剪尺寸(如 256):")
+
+	print("")
+
+	# 图像 裁剪
+	TifCrop(r"" + TifImage,
+			r"" + ImageOutFile,
+			int(ClipImageSize),
+			0.1)
+
+	# 标签 裁剪
+	TifCrop(r"" + TifLabel,
+			r"" + LabelOutFile,
+			int(ClipLableSize),
+			0.1)
+
+	print("··················裁剪完成··················")
+	print("裁剪结果输出文件夹地址:", "\n影像:", ImageOutFile, "\n标签:", LabelOutFile)
+	print("")
+
+	CreateADataSet()
+
+
+CreateADataSet()
