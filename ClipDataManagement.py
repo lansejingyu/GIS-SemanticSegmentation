@@ -29,14 +29,16 @@ def ClippingTool():
 		global TifFile
 		global Raster
 		Raster = input('''-----选择的栅格数据集文件应在输入的工作空间文件夹内-----
-2.请输入"输入栅格数据集"文件(如 K50F038012.tif):''')
+2.请输入"输入栅格数据集"文件(如 K50F038012.tif):'''
+		               )
 		TifFile = r'' + env.workspace3 + Raster
 		print("")
 
 	def OutExtent():  # 选择的输出范围矢量文件
 		global datasetShp
 		ShpFile = input('''-----选择的用于定义裁剪所需的范围坐标文件应在输入的工作空间文件夹内-----
-3.请输入"用于定义裁剪所需的范围坐标"矢量文件(如 Export_Output_2.shp)：''')
+3.请输入"用于定义裁剪所需的范围坐标"矢量文件(如 Export_Output_2.shp)：'''
+		                )
 		datasetShp = shapefile.Reader(r'' + env.workspace3 + ShpFile)  # 使用shapefile库打开已有的shp文件
 		print("")
 
